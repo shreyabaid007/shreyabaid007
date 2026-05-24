@@ -1,3 +1,3 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/shreyabaid007/shreyabaid007/main/header.svg" width="600"/>
+  <img src="https://raw.githubusercontent.com/shreyabaid007/shreyabaid007/main/header.svg?v=2" width="800"/>
 </p>
