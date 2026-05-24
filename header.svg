@@ -24,9 +24,7 @@
 
   <!-- three dots -->
   <circle cx="393" cy="122" r="1.5" fill="#d4a0b0"><animate attributeName="opacity" values=".15;.4;.15" dur="2s" repeatCount="indefinite"/><animate attributeName="cy" values="122;120;122" dur="2s" repeatCount="indefinite"/></circle>
-  <circle cx="400" cy="122" r="1.5" fill="#d4a0b0"><animate attributeName="opacity" values=".15;.4;.15" dur="2s" begin=".3s" repeatCount="indefinite"/><animate attributeName="cy" values="122;120;122" dur="2s" begin=".3s" repeatCount="indefinite"/></circle>
-  <circle cx="407" cy="122" r="1.5" fill="#d4a0b0"><animate attributeName="opacity" values=".15;.4;.15" dur="2s" begin=".6s" repeatCount="indefinite"/><animate attributeName="cy" values="122;120;122" dur="2s" begin=".6s" repeatCount="indefinite"/></circle>
-
+ 
   <!-- distant hills -->
   <path d="M0 210 Q100 185 200 198 Q350 175 450 195 Q580 170 700 190 Q760 182 800 195 L800 280 L0 280Z" fill="#161016" opacity=".6"/>
   <path d="M0 225 Q120 200 250 215 Q400 195 500 212 Q620 190 750 208 Q780 204 800 212 L800 280 L0 280Z" fill="#1a1119" opacity=".85"/>
