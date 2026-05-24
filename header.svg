@@ -1,141 +1,108 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 280" width="800" height="280">
-  <foreignObject width="800" height="280">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-      <style>
-        @keyframes fadeInOut { 0%,100%{opacity:.35} 40%,60%{opacity:1} }
-        @keyframes glowPulse { 0%,100%{opacity:.2} 50%{opacity:.55} }
-        @keyframes dotDrift { 0%,100%{opacity:.15;transform:translateY(0)} 50%{opacity:.4;transform:translateY(-2px)} }
-        @keyframes float1 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-3px)} }
-        @keyframes float2 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-2px)} }
-        @keyframes spin { 0%{transform:rotate(0deg)} 100%{transform:rotate(360deg)} }
-        @keyframes windowGlow { 0%,100%{opacity:.4} 50%{opacity:.75} }
-        @keyframes shimmer { 0%,100%{opacity:.06} 50%{opacity:.14} }
-        @keyframes pulseDot { 0%,100%{opacity:0;transform:scale(.8)} 50%{opacity:.5;transform:scale(1)} }
-        @keyframes smokeDrift { 0%{opacity:.25;transform:translate(0,0) scale(1)} 100%{opacity:0;transform:translate(-4px,-10px) scale(1.8)} }
-        .scene{position:relative;width:800px;height:280px;background:#0a0a0a;overflow:hidden;border-radius:8px}
-        .hills{position:absolute;bottom:0;width:100%;height:130px}
-        .hill{position:absolute;border-radius:50%;background:#1a1018}
-        .h1{width:500px;height:200px;bottom:-100px;left:-60px;background:#161016}
-        .h2{width:400px;height:180px;bottom:-90px;left:250px;background:#1a1119}
-        .h3{width:450px;height:190px;bottom:-95px;left:480px;background:#14101a}
-        .ground{position:absolute;bottom:0;width:100%;height:30px;background:linear-gradient(180deg,#1a1119,#100c14)}
-        .house{position:absolute}
-        .house-body{background:#151015;border-radius:1px}
-        .roof{width:0;height:0;border-style:solid;position:absolute}
-        .window{background:#d4a0b0;border-radius:.5px;position:absolute;animation:windowGlow 3.5s ease-in-out infinite}
-        .turbine-pole{background:#3a2a35;position:absolute}
-        .turbine-hub{position:absolute;width:4px;height:4px;animation:spin 5s linear infinite}
-        .blade{position:absolute;width:1px;height:14px;background:#8a6080;top:-14px;left:1.5px;transform-origin:bottom center;border-radius:1px}
-        .tree-trunk{background:#3a2a30;position:absolute;border-radius:0 0 1px 1px}
-        .tree-top{border-radius:50%;position:absolute}
-        .solar{position:absolute;background:#2a1a28;border-radius:1px;border:.5px solid #3a2a38}
-        .water{position:absolute;bottom:5px;height:12px;width:100%;background:linear-gradient(90deg,transparent,rgba(180,130,160,.06),rgba(180,130,160,.08),rgba(180,130,160,.06),transparent);animation:shimmer 4s ease-in-out infinite}
-        .star{position:absolute;width:2px;height:2px;background:#d4a0b0;border-radius:50%}
-        .s1{top:20px;left:80px;opacity:.3;animation:glowPulse 3s ease-in-out infinite}
-        .s2{top:12px;left:220px;opacity:.2;animation:glowPulse 4.2s ease-in-out .5s infinite}
-        .s3{top:30px;left:400px;opacity:.25;animation:glowPulse 2.8s ease-in-out 1s infinite}
-        .s4{top:18px;left:560px;opacity:.2;animation:glowPulse 3.6s ease-in-out .3s infinite}
-        .s5{top:35px;left:700px;opacity:.3;animation:glowPulse 4s ease-in-out .8s infinite}
-        .s6{top:8px;left:340px;opacity:.15;animation:glowPulse 5s ease-in-out 1.5s infinite}
-        .s7{top:42px;left:150px;opacity:.18;animation:glowPulse 3.2s ease-in-out .2s infinite}
-        .s8{top:25px;left:640px;opacity:.22;animation:glowPulse 3.8s ease-in-out .7s infinite}
-        .data-dot{position:absolute;width:3px;height:3px;border-radius:50%;background:#d4a0b0;bottom:32px;animation:pulseDot 3s ease-in-out infinite}
-        .d1{left:200px;animation-delay:0s}
-        .d2{left:400px;animation-delay:1s}
-        .d3{left:600px;animation-delay:2s}
-        .data-line{position:absolute;bottom:33px;height:1px;background:linear-gradient(90deg,transparent,rgba(212,160,176,.08),transparent);width:100%}
-        .text-wrap{position:absolute;top:75px;width:100%;text-align:center}
-        .main-text{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:13px;font-weight:400;letter-spacing:3.5px;color:#94a3b8;text-transform:lowercase;animation:fadeInOut 4s ease-in-out infinite}
-        .accent-line{width:40px;height:1px;background:linear-gradient(90deg,transparent,#d4a0b0,transparent);margin:0 auto 14px;animation:glowPulse 2.5s ease-in-out infinite}
-        .dot-row{display:flex;gap:6px;justify-content:center;margin-top:14px}
-        .dot{width:3px;height:3px;border-radius:50%;background:#d4a0b0}
-        .dot:nth-child(1){animation:dotDrift 2s ease-in-out infinite}
-        .dot:nth-child(2){animation:dotDrift 2s ease-in-out .3s infinite}
-        .dot:nth-child(3){animation:dotDrift 2s ease-in-out .6s infinite}
-        .smoke{position:absolute;width:4px;height:4px;border-radius:50%;background:rgba(180,140,160,.2);animation:smokeDrift 3s ease-out infinite}
-      </style>
-      <div class="scene">
-        <div class="star s1"></div><div class="star s2"></div><div class="star s3"></div>
-        <div class="star s4"></div><div class="star s5"></div><div class="star s6"></div>
-        <div class="star s7"></div><div class="star s8"></div>
-        <div class="text-wrap">
-          <div class="accent-line"></div>
-          <div class="main-text">building beyond the noise</div>
-          <div class="dot-row"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-        </div>
-        <div class="hills">
-          <div class="hill h1"></div><div class="hill h2"></div><div class="hill h3"></div>
-        </div>
-        <div class="ground"></div>
-        <!-- house 1 -->
-        <div class="house" style="left:160px;bottom:52px">
-          <div class="roof" style="border-width:0 12px 10px;border-color:transparent transparent #2a1a25;top:-10px;left:-2px;position:absolute"></div>
-          <div class="house-body" style="width:22px;height:14px"></div>
-          <div class="window" style="width:4px;height:4px;top:4px;left:4px"></div>
-          <div class="window" style="width:4px;height:4px;top:4px;left:13px;animation-delay:.8s"></div>
-          <div class="smoke" style="top:-18px;left:14px"></div>
-          <div class="smoke" style="top:-18px;left:14px;animation-delay:1.5s"></div>
-        </div>
-        <!-- house 2 -->
-        <div class="house" style="left:200px;bottom:48px">
-          <div class="roof" style="border-width:0 9px 8px;border-color:transparent transparent #28182a;top:-8px;left:-1px;position:absolute"></div>
-          <div class="house-body" style="width:16px;height:11px"></div>
-          <div class="window" style="width:3px;height:3px;top:3px;left:6px;animation-delay:1.5s"></div>
-        </div>
-        <!-- house 3 far right -->
-        <div class="house" style="left:580px;bottom:55px">
-          <div class="roof" style="border-width:0 11px 9px;border-color:transparent transparent #251520;top:-9px;left:-1px;position:absolute"></div>
-          <div class="house-body" style="width:20px;height:13px"></div>
-          <div class="window" style="width:4px;height:4px;top:4px;left:4px;animation-delay:2s"></div>
-          <div class="window" style="width:4px;height:4px;top:4px;left:12px;animation-delay:.5s"></div>
-          <div class="smoke" style="top:-16px;left:12px;animation-delay:.7s"></div>
-        </div>
-        <!-- trees -->
-        <div style="position:absolute;left:120px;bottom:48px;animation:float1 4s ease-in-out infinite">
-          <div class="tree-trunk" style="width:2px;height:12px;left:4px;bottom:0;position:absolute"></div>
-          <div class="tree-top" style="width:12px;height:12px;background:#2a1828;bottom:10px;position:absolute;opacity:.7"></div>
-        </div>
-        <div style="position:absolute;left:140px;bottom:45px;animation:float2 5s ease-in-out .5s infinite">
-          <div class="tree-trunk" style="width:2px;height:9px;left:3px;bottom:0;position:absolute"></div>
-          <div class="tree-top" style="width:9px;height:9px;background:#251525;bottom:8px;position:absolute;opacity:.6"></div>
-        </div>
-        <div style="position:absolute;left:550px;bottom:52px;animation:float1 4.5s ease-in-out .8s infinite">
-          <div class="tree-trunk" style="width:2px;height:11px;left:4px;bottom:0;position:absolute"></div>
-          <div class="tree-top" style="width:11px;height:11px;background:#2a1828;bottom:9px;position:absolute;opacity:.65"></div>
-        </div>
-        <div style="position:absolute;left:620px;bottom:50px;animation:float2 3.8s ease-in-out 1.2s infinite">
-          <div class="tree-trunk" style="width:2px;height:8px;left:3px;bottom:0;position:absolute"></div>
-          <div class="tree-top" style="width:8px;height:8px;background:#221422;bottom:7px;position:absolute;opacity:.55"></div>
-        </div>
-        <!-- wind turbine -->
-        <div style="position:absolute;left:350px;bottom:50px">
-          <div class="turbine-pole" style="width:2px;height:35px"></div>
-          <div class="turbine-hub" style="top:-37px;left:-1px">
-            <div class="blade"></div>
-            <div class="blade" style="transform:rotate(120deg)"></div>
-            <div class="blade" style="transform:rotate(240deg)"></div>
-          </div>
-        </div>
-        <!-- second turbine smaller -->
-        <div style="position:absolute;left:380px;bottom:46px">
-          <div class="turbine-pole" style="width:1.5px;height:25px;background:#30202c"></div>
-          <div class="turbine-hub" style="top:-27px;left:-1px;animation-duration:7s">
-            <div class="blade" style="height:10px;background:#705065"></div>
-            <div class="blade" style="height:10px;background:#705065;transform:rotate(120deg)"></div>
-            <div class="blade" style="height:10px;background:#705065;transform:rotate(240deg)"></div>
-          </div>
-        </div>
-        <!-- solar panels -->
-        <div class="solar" style="left:480px;bottom:50px;width:14px;height:6px;transform:rotate(-10deg)"></div>
-        <div class="solar" style="left:500px;bottom:49px;width:12px;height:5px;transform:rotate(-10deg)"></div>
-        <!-- water shimmer -->
-        <div class="water"></div>
-        <!-- data network dots -->
-        <div class="data-line"></div>
-        <div class="data-dot d1"></div>
-        <div class="data-dot d2"></div>
-        <div class="data-dot d3"></div>
-      </div>
-    </div>
-  </foreignObject>
+  <rect width="800" height="280" fill="#0a0a0a" rx="10"/>
+
+  <!-- stars -->
+  <circle cx="80" cy="25" r="1" fill="#d4a0b0"><animate attributeName="opacity" values=".3;.08;.3" dur="3s" repeatCount="indefinite"/></circle>
+  <circle cx="220" cy="15" r=".8" fill="#d4a0b0"><animate attributeName="opacity" values=".2;.05;.2" dur="4.2s" repeatCount="indefinite"/></circle>
+  <circle cx="400" cy="30" r="1" fill="#d4a0b0"><animate attributeName="opacity" values=".25;.06;.25" dur="2.8s" repeatCount="indefinite"/></circle>
+  <circle cx="560" cy="18" r=".7" fill="#d4a0b0"><animate attributeName="opacity" values=".2;.05;.2" dur="3.6s" repeatCount="indefinite"/></circle>
+  <circle cx="700" cy="35" r=".9" fill="#d4a0b0"><animate attributeName="opacity" values=".3;.06;.3" dur="4s" repeatCount="indefinite"/></circle>
+  <circle cx="340" cy="10" r=".6" fill="#d4a0b0"><animate attributeName="opacity" values=".15;.03;.15" dur="5s" repeatCount="indefinite"/></circle>
+  <circle cx="150" cy="42" r=".7" fill="#d4a0b0"><animate attributeName="opacity" values=".18;.04;.18" dur="3.2s" repeatCount="indefinite"/></circle>
+  <circle cx="640" cy="22" r=".8" fill="#d4a0b0"><animate attributeName="opacity" values=".22;.05;.22" dur="3.8s" repeatCount="indefinite"/></circle>
+
+  <!-- accent line -->
+  <line x1="370" y1="80" x2="430" y2="80" stroke="#d4a0b0" stroke-width=".5">
+    <animate attributeName="opacity" values=".2;.55;.2" dur="2.5s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- main text -->
+  <text x="400" y="105" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#94a3b8" letter-spacing="3.5" opacity=".35">
+    <animate attributeName="opacity" values=".35;1;1;.35" keyTimes="0;.3;.7;1" dur="4s" repeatCount="indefinite"/>
+    building beyond the noise
+  </text>
+
+  <!-- three dots -->
+  <circle cx="393" cy="122" r="1.5" fill="#d4a0b0"><animate attributeName="opacity" values=".15;.4;.15" dur="2s" repeatCount="indefinite"/><animate attributeName="cy" values="122;120;122" dur="2s" repeatCount="indefinite"/></circle>
+  <circle cx="400" cy="122" r="1.5" fill="#d4a0b0"><animate attributeName="opacity" values=".15;.4;.15" dur="2s" begin=".3s" repeatCount="indefinite"/><animate attributeName="cy" values="122;120;122" dur="2s" begin=".3s" repeatCount="indefinite"/></circle>
+  <circle cx="407" cy="122" r="1.5" fill="#d4a0b0"><animate attributeName="opacity" values=".15;.4;.15" dur="2s" begin=".6s" repeatCount="indefinite"/><animate attributeName="cy" values="122;120;122" dur="2s" begin=".6s" repeatCount="indefinite"/></circle>
+
+  <!-- distant hills -->
+  <path d="M0 210 Q100 185 200 198 Q350 175 450 195 Q580 170 700 190 Q760 182 800 195 L800 280 L0 280Z" fill="#161016" opacity=".6"/>
+  <path d="M0 225 Q120 200 250 215 Q400 195 500 212 Q620 190 750 208 Q780 204 800 212 L800 280 L0 280Z" fill="#1a1119" opacity=".85"/>
+
+  <!-- trees left cluster -->
+  <line x1="120" y1="218" x2="120" y2="206" stroke="#3a2a30" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="120" cy="203" r="5.5" fill="#2a1828" opacity=".7"><animate attributeName="cy" values="203;200;203" dur="4s" repeatCount="indefinite"/></circle>
+  <line x1="142" y1="215" x2="142" y2="206" stroke="#3a2a30" stroke-width="1.2" stroke-linecap="round"/>
+  <circle cx="142" cy="203" r="4" fill="#251525" opacity=".6"><animate attributeName="cy" values="203;201;203" dur="5s" repeatCount="indefinite"/></circle>
+
+  <!-- house 1 -->
+  <rect x="162" y="207" width="22" height="14" fill="#151015" rx="1"/>
+  <polygon points="160,207 173,197 186,207" fill="#2a1a25"/>
+  <rect x="167" y="211" width="4" height="4" fill="#d4a0b0" rx=".5"><animate attributeName="opacity" values=".4;.75;.4" dur="3.5s" repeatCount="indefinite"/></rect>
+  <rect x="175" y="211" width="4" height="4" fill="#d4a0b0" rx=".5"><animate attributeName="opacity" values=".5;.7;.5" dur="4s" repeatCount="indefinite"/></rect>
+
+  <!-- house 2 smaller -->
+  <rect x="198" y="210" width="16" height="11" fill="#151015" rx="1"/>
+  <polygon points="196,210 206,203 218,210" fill="#28182a"/>
+  <rect x="204" y="213" width="3" height="3" fill="#d4a0b0" rx=".5"><animate attributeName="opacity" values=".35;.65;.35" dur="4.5s" repeatCount="indefinite"/></rect>
+
+  <!-- wind turbine 1 -->
+  <line x1="350" y1="210" x2="350" y2="175" stroke="#3a2a35" stroke-width="1.5"/>
+  <g transform="translate(350,175)">
+    <animateTransform attributeName="transform" type="rotate" values="0 0 0;360 0 0" dur="5s" repeatCount="indefinite" additive="sum"/>
+    <line x1="0" y1="0" x2="0" y2="-14" stroke="#8a6080" stroke-width="1" stroke-linecap="round"/>
+    <line x1="0" y1="0" x2="12.1" y2="7" stroke="#8a6080" stroke-width="1" stroke-linecap="round"/>
+    <line x1="0" y1="0" x2="-12.1" y2="7" stroke="#8a6080" stroke-width="1" stroke-linecap="round"/>
+  </g>
+
+  <!-- wind turbine 2 smaller -->
+  <line x1="378" y1="212" x2="378" y2="187" stroke="#30202c" stroke-width="1"/>
+  <g transform="translate(378,187)">
+    <animateTransform attributeName="transform" type="rotate" values="0 0 0;360 0 0" dur="7s" repeatCount="indefinite" additive="sum"/>
+    <line x1="0" y1="0" x2="0" y2="-10" stroke="#705065" stroke-width=".8" stroke-linecap="round"/>
+    <line x1="0" y1="0" x2="8.7" y2="5" stroke="#705065" stroke-width=".8" stroke-linecap="round"/>
+    <line x1="0" y1="0" x2="-8.7" y2="5" stroke="#705065" stroke-width=".8" stroke-linecap="round"/>
+  </g>
+
+  <!-- solar panels -->
+  <rect x="480" y="208" width="14" height="6" fill="#2a1a28" stroke="#3a2a38" stroke-width=".5" rx="1" transform="rotate(-10 487 211)"/>
+  <rect x="500" y="209" width="12" height="5" fill="#2a1a28" stroke="#3a2a38" stroke-width=".5" rx="1" transform="rotate(-10 506 211)"/>
+
+  <!-- trees right cluster -->
+  <line x1="550" y1="215" x2="550" y2="204" stroke="#3a2a30" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="550" cy="201" r="5" fill="#2a1828" opacity=".65"><animate attributeName="cy" values="201;198;201" dur="4.5s" repeatCount="indefinite"/></circle>
+  <line x1="572" y1="213" x2="572" y2="205" stroke="#3a2a30" stroke-width="1.2" stroke-linecap="round"/>
+  <circle cx="572" cy="202" r="4" fill="#221422" opacity=".55"><animate attributeName="cy" values="202;200;202" dur="3.8s" repeatCount="indefinite"/></circle>
+
+  <!-- house 3 right -->
+  <rect x="590" y="204" width="20" height="13" fill="#151015" rx="1"/>
+  <polygon points="588,204 600,195 612,204" fill="#251520"/>
+  <rect x="595" y="208" width="4" height="4" fill="#d4a0b0" rx=".5"><animate attributeName="opacity" values=".45;.7;.45" dur="3.8s" repeatCount="indefinite"/></rect>
+  <rect x="603" y="208" width="4" height="4" fill="#d4a0b0" rx=".5"><animate attributeName="opacity" values=".35;.65;.35" dur="5s" repeatCount="indefinite"/></rect>
+
+  <!-- ground -->
+  <path d="M0 245 Q200 238 400 245 Q600 252 800 242 L800 280 L0 280Z" fill="#100c14"/>
+
+  <!-- water shimmer -->
+  <path d="M0 252 Q200 246 400 252 Q600 258 800 250 L800 268 Q600 260 400 268 Q200 276 0 266Z" fill="#1a1030" opacity=".3"/>
+  <line x1="180" y1="258" x2="215" y2="258" stroke="#d4a0b0" stroke-width=".4" opacity=".1">
+    <animate attributeName="x1" values="180;192;180" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="x2" values="215;227;215" dur="5s" repeatCount="indefinite"/>
+  </line>
+  <line x1="450" y1="255" x2="490" y2="255" stroke="#d4a0b0" stroke-width=".4" opacity=".08">
+    <animate attributeName="x1" values="450;460;450" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="x2" values="490;500;490" dur="4s" repeatCount="indefinite"/>
+  </line>
+  <line x1="620" y1="260" x2="648" y2="260" stroke="#d4a0b0" stroke-width=".4" opacity=".07">
+    <animate attributeName="x1" values="620;630;620" dur="6s" repeatCount="indefinite"/>
+    <animate attributeName="x2" values="648;658;648" dur="6s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- data network line + dots -->
+  <line x1="0" y1="272" x2="800" y2="272" stroke="#d4a0b0" stroke-width=".3" opacity=".06"/>
+  <circle cx="200" cy="272" r="1.5" fill="#d4a0b0"><animate attributeName="opacity" values="0;.5;0" dur="3s" repeatCount="indefinite"/></circle>
+  <circle cx="400" cy="272" r="1.5" fill="#d4a0b0"><animate attributeName="opacity" values="0;.5;0" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
+  <circle cx="600" cy="272" r="1.5" fill="#d4a0b0"><animate attributeName="opacity" values="0;.5;0" dur="3s" begin="2s" repeatCount="indefinite"/></circle>
 </svg>
