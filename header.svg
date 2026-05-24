@@ -11,11 +11,6 @@
   <circle cx="150" cy="42" r=".7" fill="#d4a0b0"><animate attributeName="opacity" values=".18;.04;.18" dur="3.2s" repeatCount="indefinite"/></circle>
   <circle cx="640" cy="22" r=".8" fill="#d4a0b0"><animate attributeName="opacity" values=".22;.05;.22" dur="3.8s" repeatCount="indefinite"/></circle>
 
-  <!-- accent line -->
-  <line x1="370" y1="80" x2="430" y2="80" stroke="#d4a0b0" stroke-width=".5">
-    <animate attributeName="opacity" values=".2;.55;.2" dur="2.5s" repeatCount="indefinite"/>
-  </line>
-
   <!-- main text -->
   <text x="400" y="105" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#8a6080" letter-spacing="3.5" opacity=".35">
     <animate attributeName="opacity" values=".35;1;1;.35" keyTimes="0;.3;.7;1" dur="4s" repeatCount="indefinite"/>
