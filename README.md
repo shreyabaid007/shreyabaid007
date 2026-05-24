@@ -2,16 +2,18 @@
 
 **Backend Engineer @ [Personio](https://personio.com) · Building [PixelProbe.ai](https://www.pixelprobe.ai/) · Munich, DE**
 
-I build AI systems that actually work — multi-agent pipelines, RAG architectures, and developer tools. I care about clean abstractions, production-grade code, and shipping things people use.
+I build AI systems that actually ship — multi-agent pipelines, RAG architectures, and developer tools. Lately into LangGraph, agentic workflows, and using AI for climate intelligence.
 
 ---
 
-### 🔬 What I'm working on
+### 🔬 What I'm building
 
-- **[PixelProbe.ai](https://www.pixelprobe.ai/)** — AI-powered image analysis tool (my side project, live in production)
-- **[multi-agent-script-generator](https://github.com/shreyabaid007/multi-agent-script-generator)** — Production multi-agent pipeline on LangGraph with parallel fan-out, Docker sandboxing, and HITL
-- **[climate-intelligence-rag](https://github.com/shreyabaid007/climate-intelligence-rag)** — Two-stage RAG over IPCC climate reports with cross-encoder reranking
-- **[text-to-sql-agent](https://github.com/shreyabaid007/text-to-sql-agent)** — Natural language → SQL agent with full-stack UI
+- **[PixelProbe.ai](https://www.pixelprobe.ai/)** — AI-powered image analysis tool (live in production)
+- **[multi-agent-script-generator](https://github.com/shreyabaid007/multi-agent-script-generator)** — Production multi-agent pipeline on LangGraph — parallel fan-out via Send API, Docker sandboxed execution, HITL, model tiering (Sonnet + Haiku), Langfuse observability
+- **[climate-intelligence-rag](https://github.com/shreyabaid007/climate-intelligence-rag)** — Two-stage RAG over IPCC AR6 climate reports with cross-encoder reranking
+- **[war-carbon-emissions-accounting](https://github.com/shreyabaid007/war-carbon-emissions-accounting)** — Open-source pipeline tracking GHG emissions from conflict using NASA FIRMS, ACLED, and IGGAW methodology
+- **[text-to-sql-agent](https://github.com/shreyabaid007/text-to-sql-agent)** — Natural language → SQL agent with full-stack UI and Docker deployment
+- **[code-assistant](https://github.com/shreyabaid007/code-assistant)** — AI code review tool with GitHub integration + dual LLM support (OpenAI / Ollama)
 
 ---
 
@@ -39,6 +41,5 @@ I build AI systems that actually work — multi-agent pipelines, RAG architectur
 
 ### 🔗 Connect
 
-[![Twitter](https://img.shields.io/badge/@shreyabaid37-1DA1F2?style=flat-square&logo=x&logoColor=white)](https://twitter.com/shreyabaid37)
-[![PixelProbe](https://img.shields.io/badge/PixelProbe.ai-000?style=flat-square&logo=globe&logoColor=white)](https://www.pixelprobe.ai/)
-[![GitHub](https://img.shields.io/badge/shreyabaid007-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/shreyabaid007)
+[![Twitter](https://img.shields.io/badge/@shreyabaid37-000?style=flat-square&logo=x&logoColor=white)](https://twitter.com/shreyabaid37)
+[![PixelProbe](https://img.shields.io/badge/PixelProbe.ai-4F46E5?style=flat-square&logo=globe&logoColor=white)](https://www.pixelprobe.ai/)
