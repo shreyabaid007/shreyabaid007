@@ -1,66 +1,140 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 120" width="600" height="120" fill="none">
-  <foreignObject width="600" height="120">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 280" width="800" height="280">
+  <foreignObject width="800" height="280">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <style>
-        @keyframes fadeInOut {
-          0%, 100% { opacity: 0.35; }
-          40%, 60% { opacity: 1; }
-        }
-        @keyframes glowPulse {
-          0%, 100% { opacity: 0.25; }
-          50% { opacity: 0.6; }
-        }
-        @keyframes dotDrift {
-          0%, 100% { opacity: 0.15; transform: translateY(0px); }
-          50% { opacity: 0.4; transform: translateY(-2px); }
-        }
-        .wrap {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          height: 120px;
-          font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
-          position: relative;
-        }
-        .line {
-          width: 40px;
-          height: 1px;
-          background: linear-gradient(90deg, transparent, #5eead4, transparent);
-          animation: glowPulse 2.5s ease-in-out infinite;
-          margin-bottom: 16px;
-        }
-        .text {
-          font-size: 13px;
-          font-weight: 400;
-          letter-spacing: 3.5px;
-          color: #94a3b8;
-          text-transform: lowercase;
-          animation: fadeInOut 4s ease-in-out infinite;
-        }
-        .dot-row {
-          display: flex;
-          gap: 6px;
-          margin-top: 16px;
-        }
-        .dot {
-          width: 3px;
-          height: 3px;
-          border-radius: 50%;
-          background: #5eead4;
-        }
-        .dot:nth-child(1) { animation: dotDrift 2s ease-in-out infinite; }
-        .dot:nth-child(2) { animation: dotDrift 2s ease-in-out 0.3s infinite; }
-        .dot:nth-child(3) { animation: dotDrift 2s ease-in-out 0.6s infinite; }
+        @keyframes fadeInOut { 0%,100%{opacity:.35} 40%,60%{opacity:1} }
+        @keyframes glowPulse { 0%,100%{opacity:.2} 50%{opacity:.55} }
+        @keyframes dotDrift { 0%,100%{opacity:.15;transform:translateY(0)} 50%{opacity:.4;transform:translateY(-2px)} }
+        @keyframes float1 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-3px)} }
+        @keyframes float2 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-2px)} }
+        @keyframes spin { 0%{transform:rotate(0deg)} 100%{transform:rotate(360deg)} }
+        @keyframes windowGlow { 0%,100%{opacity:.4} 50%{opacity:.75} }
+        @keyframes shimmer { 0%,100%{opacity:.06} 50%{opacity:.14} }
+        @keyframes pulseDot { 0%,100%{opacity:0;transform:scale(.8)} 50%{opacity:.5;transform:scale(1)} }
+        @keyframes smokeDrift { 0%{opacity:.25;transform:translate(0,0) scale(1)} 100%{opacity:0;transform:translate(-4px,-10px) scale(1.8)} }
+        .scene{position:relative;width:800px;height:280px;background:#0a0a0a;overflow:hidden;border-radius:8px}
+        .hills{position:absolute;bottom:0;width:100%;height:130px}
+        .hill{position:absolute;border-radius:50%;background:#1a1018}
+        .h1{width:500px;height:200px;bottom:-100px;left:-60px;background:#161016}
+        .h2{width:400px;height:180px;bottom:-90px;left:250px;background:#1a1119}
+        .h3{width:450px;height:190px;bottom:-95px;left:480px;background:#14101a}
+        .ground{position:absolute;bottom:0;width:100%;height:30px;background:linear-gradient(180deg,#1a1119,#100c14)}
+        .house{position:absolute}
+        .house-body{background:#151015;border-radius:1px}
+        .roof{width:0;height:0;border-style:solid;position:absolute}
+        .window{background:#d4a0b0;border-radius:.5px;position:absolute;animation:windowGlow 3.5s ease-in-out infinite}
+        .turbine-pole{background:#3a2a35;position:absolute}
+        .turbine-hub{position:absolute;width:4px;height:4px;animation:spin 5s linear infinite}
+        .blade{position:absolute;width:1px;height:14px;background:#8a6080;top:-14px;left:1.5px;transform-origin:bottom center;border-radius:1px}
+        .tree-trunk{background:#3a2a30;position:absolute;border-radius:0 0 1px 1px}
+        .tree-top{border-radius:50%;position:absolute}
+        .solar{position:absolute;background:#2a1a28;border-radius:1px;border:.5px solid #3a2a38}
+        .water{position:absolute;bottom:5px;height:12px;width:100%;background:linear-gradient(90deg,transparent,rgba(180,130,160,.06),rgba(180,130,160,.08),rgba(180,130,160,.06),transparent);animation:shimmer 4s ease-in-out infinite}
+        .star{position:absolute;width:2px;height:2px;background:#d4a0b0;border-radius:50%}
+        .s1{top:20px;left:80px;opacity:.3;animation:glowPulse 3s ease-in-out infinite}
+        .s2{top:12px;left:220px;opacity:.2;animation:glowPulse 4.2s ease-in-out .5s infinite}
+        .s3{top:30px;left:400px;opacity:.25;animation:glowPulse 2.8s ease-in-out 1s infinite}
+        .s4{top:18px;left:560px;opacity:.2;animation:glowPulse 3.6s ease-in-out .3s infinite}
+        .s5{top:35px;left:700px;opacity:.3;animation:glowPulse 4s ease-in-out .8s infinite}
+        .s6{top:8px;left:340px;opacity:.15;animation:glowPulse 5s ease-in-out 1.5s infinite}
+        .s7{top:42px;left:150px;opacity:.18;animation:glowPulse 3.2s ease-in-out .2s infinite}
+        .s8{top:25px;left:640px;opacity:.22;animation:glowPulse 3.8s ease-in-out .7s infinite}
+        .data-dot{position:absolute;width:3px;height:3px;border-radius:50%;background:#d4a0b0;bottom:32px;animation:pulseDot 3s ease-in-out infinite}
+        .d1{left:200px;animation-delay:0s}
+        .d2{left:400px;animation-delay:1s}
+        .d3{left:600px;animation-delay:2s}
+        .data-line{position:absolute;bottom:33px;height:1px;background:linear-gradient(90deg,transparent,rgba(212,160,176,.08),transparent);width:100%}
+        .text-wrap{position:absolute;top:75px;width:100%;text-align:center}
+        .main-text{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:13px;font-weight:400;letter-spacing:3.5px;color:#94a3b8;text-transform:lowercase;animation:fadeInOut 4s ease-in-out infinite}
+        .accent-line{width:40px;height:1px;background:linear-gradient(90deg,transparent,#d4a0b0,transparent);margin:0 auto 14px;animation:glowPulse 2.5s ease-in-out infinite}
+        .dot-row{display:flex;gap:6px;justify-content:center;margin-top:14px}
+        .dot{width:3px;height:3px;border-radius:50%;background:#d4a0b0}
+        .dot:nth-child(1){animation:dotDrift 2s ease-in-out infinite}
+        .dot:nth-child(2){animation:dotDrift 2s ease-in-out .3s infinite}
+        .dot:nth-child(3){animation:dotDrift 2s ease-in-out .6s infinite}
+        .smoke{position:absolute;width:4px;height:4px;border-radius:50%;background:rgba(180,140,160,.2);animation:smokeDrift 3s ease-out infinite}
       </style>
-      <div class="wrap">
-        <div class="line"></div>
-        <div class="text">building beyond the noise</div>
-        <div class="dot-row">
-          <div class="dot"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
+      <div class="scene">
+        <div class="star s1"></div><div class="star s2"></div><div class="star s3"></div>
+        <div class="star s4"></div><div class="star s5"></div><div class="star s6"></div>
+        <div class="star s7"></div><div class="star s8"></div>
+        <div class="text-wrap">
+          <div class="accent-line"></div>
+          <div class="main-text">building beyond the noise</div>
+          <div class="dot-row"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
         </div>
+        <div class="hills">
+          <div class="hill h1"></div><div class="hill h2"></div><div class="hill h3"></div>
+        </div>
+        <div class="ground"></div>
+        <!-- house 1 -->
+        <div class="house" style="left:160px;bottom:52px">
+          <div class="roof" style="border-width:0 12px 10px;border-color:transparent transparent #2a1a25;top:-10px;left:-2px;position:absolute"></div>
+          <div class="house-body" style="width:22px;height:14px"></div>
+          <div class="window" style="width:4px;height:4px;top:4px;left:4px"></div>
+          <div class="window" style="width:4px;height:4px;top:4px;left:13px;animation-delay:.8s"></div>
+          <div class="smoke" style="top:-18px;left:14px"></div>
+          <div class="smoke" style="top:-18px;left:14px;animation-delay:1.5s"></div>
+        </div>
+        <!-- house 2 -->
+        <div class="house" style="left:200px;bottom:48px">
+          <div class="roof" style="border-width:0 9px 8px;border-color:transparent transparent #28182a;top:-8px;left:-1px;position:absolute"></div>
+          <div class="house-body" style="width:16px;height:11px"></div>
+          <div class="window" style="width:3px;height:3px;top:3px;left:6px;animation-delay:1.5s"></div>
+        </div>
+        <!-- house 3 far right -->
+        <div class="house" style="left:580px;bottom:55px">
+          <div class="roof" style="border-width:0 11px 9px;border-color:transparent transparent #251520;top:-9px;left:-1px;position:absolute"></div>
+          <div class="house-body" style="width:20px;height:13px"></div>
+          <div class="window" style="width:4px;height:4px;top:4px;left:4px;animation-delay:2s"></div>
+          <div class="window" style="width:4px;height:4px;top:4px;left:12px;animation-delay:.5s"></div>
+          <div class="smoke" style="top:-16px;left:12px;animation-delay:.7s"></div>
+        </div>
+        <!-- trees -->
+        <div style="position:absolute;left:120px;bottom:48px;animation:float1 4s ease-in-out infinite">
+          <div class="tree-trunk" style="width:2px;height:12px;left:4px;bottom:0;position:absolute"></div>
+          <div class="tree-top" style="width:12px;height:12px;background:#2a1828;bottom:10px;position:absolute;opacity:.7"></div>
+        </div>
+        <div style="position:absolute;left:140px;bottom:45px;animation:float2 5s ease-in-out .5s infinite">
+          <div class="tree-trunk" style="width:2px;height:9px;left:3px;bottom:0;position:absolute"></div>
+          <div class="tree-top" style="width:9px;height:9px;background:#251525;bottom:8px;position:absolute;opacity:.6"></div>
+        </div>
+        <div style="position:absolute;left:550px;bottom:52px;animation:float1 4.5s ease-in-out .8s infinite">
+          <div class="tree-trunk" style="width:2px;height:11px;left:4px;bottom:0;position:absolute"></div>
+          <div class="tree-top" style="width:11px;height:11px;background:#2a1828;bottom:9px;position:absolute;opacity:.65"></div>
+        </div>
+        <div style="position:absolute;left:620px;bottom:50px;animation:float2 3.8s ease-in-out 1.2s infinite">
+          <div class="tree-trunk" style="width:2px;height:8px;left:3px;bottom:0;position:absolute"></div>
+          <div class="tree-top" style="width:8px;height:8px;background:#221422;bottom:7px;position:absolute;opacity:.55"></div>
+        </div>
+        <!-- wind turbine -->
+        <div style="position:absolute;left:350px;bottom:50px">
+          <div class="turbine-pole" style="width:2px;height:35px"></div>
+          <div class="turbine-hub" style="top:-37px;left:-1px">
+            <div class="blade"></div>
+            <div class="blade" style="transform:rotate(120deg)"></div>
+            <div class="blade" style="transform:rotate(240deg)"></div>
+          </div>
+        </div>
+        <!-- second turbine smaller -->
+        <div style="position:absolute;left:380px;bottom:46px">
+          <div class="turbine-pole" style="width:1.5px;height:25px;background:#30202c"></div>
+          <div class="turbine-hub" style="top:-27px;left:-1px;animation-duration:7s">
+            <div class="blade" style="height:10px;background:#705065"></div>
+            <div class="blade" style="height:10px;background:#705065;transform:rotate(120deg)"></div>
+            <div class="blade" style="height:10px;background:#705065;transform:rotate(240deg)"></div>
+          </div>
+        </div>
+        <!-- solar panels -->
+        <div class="solar" style="left:480px;bottom:50px;width:14px;height:6px;transform:rotate(-10deg)"></div>
+        <div class="solar" style="left:500px;bottom:49px;width:12px;height:5px;transform:rotate(-10deg)"></div>
+        <!-- water shimmer -->
+        <div class="water"></div>
+        <!-- data network dots -->
+        <div class="data-line"></div>
+        <div class="data-dot d1"></div>
+        <div class="data-dot d2"></div>
+        <div class="data-dot d3"></div>
       </div>
     </div>
   </foreignObject>
