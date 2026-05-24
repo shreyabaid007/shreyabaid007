@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="800" height="200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="50%" stop-color="#161b22"/>
+      <stop offset="100%" stop-color="#0d1117"/>
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6C63FF">
+        <animate attributeName="stop-color" values="#6C63FF;#a78bfa;#6C63FF" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#a78bfa">
+        <animate attributeName="stop-color" values="#a78bfa;#6C63FF;#a78bfa" dur="4s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="200" fill="url(#bg)" rx="12"/>
+
+  <!-- floating symbols -->
+  <text font-family="Fira Code, monospace" font-size="14" fill="#6C63FF" opacity="0.15">
+    <tspan x="50" y="40">
+      <animate attributeName="y" values="40;30;40" dur="3s" repeatCount="indefinite"/>
+      { }
+    </tspan>
+  </text>
+  <text font-family="Fira Code, monospace" font-size="12" fill="#a78bfa" opacity="0.12">
+    <tspan x="720" y="60">
+      <animate attributeName="y" values="60;48;60" dur="3.5s" repeatCount="indefinite"/>
+      =>
+    </tspan>
+  </text>
+  <text font-family="Fira Code, monospace" font-size="16" fill="#6C63FF" opacity="0.1">
+    <tspan x="120" y="170">
+      <animate attributeName="y" values="170;158;170" dur="4s" repeatCount="indefinite"/>
+      [ ]
+    </tspan>
+  </text>
+  <text font-family="Fira Code, monospace" font-size="13" fill="#a78bfa" opacity="0.13">
+    <tspan x="650" y="155">
+      <animate attributeName="y" values="155;143;155" dur="2.8s" repeatCount="indefinite"/>
+      />
+    </tspan>
+  </text>
+  <text font-family="Fira Code, monospace" font-size="11" fill="#6C63FF" opacity="0.1">
+    <tspan x="200" y="55">
+      <animate attributeName="y" values="55;45;55" dur="3.2s" repeatCount="indefinite"/>
+      **
+    </tspan>
+  </text>
+  <text font-family="Fira Code, monospace" font-size="15" fill="#a78bfa" opacity="0.08">
+    <tspan x="580" y="45">
+      <animate attributeName="y" values="45;35;45" dur="3.7s" repeatCount="indefinite"/>
+      ()
+    </tspan>
+  </text>
+
+  <!-- rocket -->
+  <g transform="translate(90, 85)">
+    <animateTransform attributeName="transform" type="translate" values="90,85;90,78;90,85" dur="2s" repeatCount="indefinite"/>
+    <text font-size="32">🚀</text>
+  </g>
+
+  <!-- main text -->
+  <text x="400" y="95" text-anchor="middle" font-family="Fira Code, monospace" font-weight="700" font-size="38" fill="url(#textGrad)">
+    shipping &gt; perfecting
+  </text>
+
+  <!-- subtitle -->
+  <text x="400" y="130" text-anchor="middle" font-family="Fira Code, monospace" font-size="14" fill="#8b949e">
+    @shreyabaid007 · building things that work
+  </text>
+
+  <!-- blinking cursor -->
+  <rect x="575" y="80" width="2" height="22" fill="#6C63FF">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- bottom dots pattern -->
+  <circle cx="350" cy="175" r="1.5" fill="#6C63FF" opacity="0.2"/>
+  <circle cx="370" cy="175" r="1.5" fill="#a78bfa" opacity="0.15"/>
+  <circle cx="390" cy="175" r="1.5" fill="#6C63FF" opacity="0.2"/>
+  <circle cx="410" cy="175" r="1.5" fill="#a78bfa" opacity="0.15"/>
+  <circle cx="430" cy="175" r="1.5" fill="#6C63FF" opacity="0.2"/>
+  <circle cx="450" cy="175" r="1.5" fill="#a78bfa" opacity="0.15"/>
+</svg>
