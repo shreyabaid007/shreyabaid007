@@ -1,86 +1,185 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="800" height="200">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" width="800" height="320">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0d1117"/>
-      <stop offset="50%" stop-color="#161b22"/>
-      <stop offset="100%" stop-color="#0d1117"/>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="40%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#1a3a2a"/>
     </linearGradient>
-    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#6C63FF">
-        <animate attributeName="stop-color" values="#6C63FF;#a78bfa;#6C63FF" dur="4s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="100%" stop-color="#a78bfa">
-        <animate attributeName="stop-color" values="#a78bfa;#6C63FF;#a78bfa" dur="4s" repeatCount="indefinite"/>
-      </stop>
+    <linearGradient id="hill1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#22543d"/>
+      <stop offset="100%" stop-color="#1a3a2a"/>
     </linearGradient>
+    <linearGradient id="hill2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e3a2f"/>
+      <stop offset="100%" stop-color="#15302a"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1e3a5f"/>
+      <stop offset="50%" stop-color="#234565"/>
+      <stop offset="100%" stop-color="#1e3a5f"/>
+    </linearGradient>
+    <linearGradient id="textFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#94a3b8"/>
+      <stop offset="50%" stop-color="#cbd5e1"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
   </defs>
 
-  <rect width="800" height="200" fill="url(#bg)" rx="12"/>
+  <!-- sky -->
+  <rect width="800" height="320" fill="url(#sky)" rx="10"/>
 
-  <!-- floating symbols -->
-  <text font-family="Fira Code, monospace" font-size="14" fill="#6C63FF" opacity="0.15">
-    <tspan x="50" y="40">
-      <animate attributeName="y" values="40;30;40" dur="3s" repeatCount="indefinite"/>
-      { }
-    </tspan>
-  </text>
-  <text font-family="Fira Code, monospace" font-size="12" fill="#a78bfa" opacity="0.12">
-    <tspan x="720" y="60">
-      <animate attributeName="y" values="60;48;60" dur="3.5s" repeatCount="indefinite"/>
-      =>
-    </tspan>
-  </text>
-  <text font-family="Fira Code, monospace" font-size="16" fill="#6C63FF" opacity="0.1">
-    <tspan x="120" y="170">
-      <animate attributeName="y" values="170;158;170" dur="4s" repeatCount="indefinite"/>
-      [ ]
-    </tspan>
-  </text>
-  <text font-family="Fira Code, monospace" font-size="13" fill="#a78bfa" opacity="0.13">
-    <tspan x="650" y="155">
-      <animate attributeName="y" values="155;143;155" dur="2.8s" repeatCount="indefinite"/>
-      />
-    </tspan>
-  </text>
-  <text font-family="Fira Code, monospace" font-size="11" fill="#6C63FF" opacity="0.1">
-    <tspan x="200" y="55">
-      <animate attributeName="y" values="55;45;55" dur="3.2s" repeatCount="indefinite"/>
-      **
-    </tspan>
-  </text>
-  <text font-family="Fira Code, monospace" font-size="15" fill="#a78bfa" opacity="0.08">
-    <tspan x="580" y="45">
-      <animate attributeName="y" values="45;35;45" dur="3.7s" repeatCount="indefinite"/>
-      ()
-    </tspan>
-  </text>
+  <!-- stars twinkling -->
+  <circle cx="80" cy="30" r="1" fill="#e2e8f0" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;0.15;0.6" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="200" cy="18" r="0.8" fill="#cbd5e1" opacity="0.4">
+    <animate attributeName="opacity" values="0.4;0.1;0.4" dur="4.2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="340" cy="35" r="1.2" fill="#e2e8f0" opacity="0.5">
+    <animate attributeName="opacity" values="0.5;0.1;0.5" dur="2.7s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="520" cy="22" r="0.7" fill="#cbd5e1" opacity="0.5">
+    <animate attributeName="opacity" values="0.5;0.15;0.5" dur="3.8s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="650" cy="40" r="1" fill="#e2e8f0" opacity="0.35">
+    <animate attributeName="opacity" values="0.35;0.08;0.35" dur="5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="740" cy="15" r="0.9" fill="#cbd5e1" opacity="0.45">
+    <animate attributeName="opacity" values="0.45;0.1;0.45" dur="3.3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="430" cy="12" r="0.6" fill="#e2e8f0" opacity="0.3">
+    <animate attributeName="opacity" values="0.3;0.05;0.3" dur="4.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="150" cy="50" r="0.8" fill="#cbd5e1" opacity="0.25">
+    <animate attributeName="opacity" values="0.25;0.05;0.25" dur="3.1s" repeatCount="indefinite"/>
+  </circle>
 
-  <!-- rocket -->
-  <g transform="translate(90, 85)">
-    <animateTransform attributeName="transform" type="translate" values="90,85;90,78;90,85" dur="2s" repeatCount="indefinite"/>
-    <text font-size="32">🚀</text>
+  <!-- moon -->
+  <circle cx="680" cy="55" r="18" fill="#e2e8f0" opacity="0.12"/>
+  <circle cx="680" cy="55" r="16" fill="#f1f5f9" opacity="0.08"/>
+
+  <!-- distant hills -->
+  <path d="M0 220 Q100 170 200 195 Q350 160 450 190 Q580 155 700 185 Q760 175 800 195 L800 320 L0 320Z" fill="url(#hill2)" opacity="0.5"/>
+  <path d="M0 235 Q120 195 250 215 Q400 185 500 210 Q620 180 750 205 Q780 200 800 210 L800 320 L0 320Z" fill="url(#hill1)" opacity="0.7"/>
+
+  <!-- small wind turbine on hill - gently spinning -->
+  <g transform="translate(190, 195)">
+    <line x1="0" y1="0" x2="0" y2="25" stroke="#64748b" stroke-width="1.5" opacity="0.4"/>
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="6s" repeatCount="indefinite"/>
+      <line x1="0" y1="0" x2="0" y2="-12" stroke="#94a3b8" stroke-width="1" opacity="0.5" stroke-linecap="round"/>
+      <line x1="0" y1="0" x2="10.4" y2="6" stroke="#94a3b8" stroke-width="1" opacity="0.5" stroke-linecap="round"/>
+      <line x1="0" y1="0" x2="-10.4" y2="6" stroke="#94a3b8" stroke-width="1" opacity="0.5" stroke-linecap="round"/>
+    </g>
   </g>
 
-  <!-- main text -->
-  <text x="400" y="95" text-anchor="middle" font-family="Fira Code, monospace" font-weight="700" font-size="38" fill="url(#textGrad)">
-    shipping &gt; perfecting
-  </text>
+  <!-- second turbine, further away -->
+  <g transform="translate(220, 200)">
+    <line x1="0" y1="0" x2="0" y2="18" stroke="#64748b" stroke-width="1" opacity="0.25"/>
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="8s" repeatCount="indefinite"/>
+      <line x1="0" y1="0" x2="0" y2="-8" stroke="#94a3b8" stroke-width="0.8" opacity="0.3" stroke-linecap="round"/>
+      <line x1="0" y1="0" x2="6.9" y2="4" stroke="#94a3b8" stroke-width="0.8" opacity="0.3" stroke-linecap="round"/>
+      <line x1="0" y1="0" x2="-6.9" y2="4" stroke="#94a3b8" stroke-width="0.8" opacity="0.3" stroke-linecap="round"/>
+    </g>
+  </g>
 
-  <!-- subtitle -->
-  <text x="400" y="130" text-anchor="middle" font-family="Fira Code, monospace" font-size="14" fill="#8b949e">
-    @shreyabaid007 · building things that work
-  </text>
-
-  <!-- blinking cursor -->
-  <rect x="575" y="80" width="2" height="22" fill="#6C63FF">
-    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  <!-- small house with warm window -->
+  <rect x="560" y="215" width="18" height="14" fill="#1e293b" rx="1"/>
+  <polygon points="556,215 569,205 582,215" fill="#334155"/>
+  <rect x="565" y="219" width="4" height="4" fill="#fbbf24" opacity="0.6" rx="0.5">
+    <animate attributeName="opacity" values="0.6;0.4;0.6" dur="4s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="572" y="219" width="4" height="4" fill="#fbbf24" opacity="0.5" rx="0.5">
+    <animate attributeName="opacity" values="0.5;0.35;0.5" dur="5s" repeatCount="indefinite"/>
   </rect>
 
-  <!-- bottom dots pattern -->
-  <circle cx="350" cy="175" r="1.5" fill="#6C63FF" opacity="0.2"/>
-  <circle cx="370" cy="175" r="1.5" fill="#a78bfa" opacity="0.15"/>
-  <circle cx="390" cy="175" r="1.5" fill="#6C63FF" opacity="0.2"/>
-  <circle cx="410" cy="175" r="1.5" fill="#a78bfa" opacity="0.15"/>
-  <circle cx="430" cy="175" r="1.5" fill="#6C63FF" opacity="0.2"/>
-  <circle cx="450" cy="175" r="1.5" fill="#a78bfa" opacity="0.15"/>
+  <!-- another small house -->
+  <rect x="600" y="218" width="14" height="11" fill="#1e293b" rx="1"/>
+  <polygon points="597,218 607,210 617,218" fill="#334155"/>
+  <rect x="604" y="221" width="3" height="3" fill="#fbbf24" opacity="0.45" rx="0.5">
+    <animate attributeName="opacity" values="0.45;0.25;0.45" dur="3.5s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- small trees -->
+  <g opacity="0.5">
+    <line x1="500" y1="225" x2="500" y2="215" stroke="#4a6741" stroke-width="1.5"/>
+    <circle cx="500" cy="212" r="5" fill="#2d5a3a" opacity="0.7"/>
+  </g>
+  <g opacity="0.45">
+    <line x1="515" y1="223" x2="515" y2="215" stroke="#4a6741" stroke-width="1.2"/>
+    <circle cx="515" cy="212" r="4" fill="#2d5a3a" opacity="0.6"/>
+  </g>
+  <g opacity="0.5">
+    <line x1="635" y1="222" x2="635" y2="214" stroke="#4a6741" stroke-width="1.2"/>
+    <circle cx="635" cy="211" r="4.5" fill="#2d5a3a" opacity="0.65"/>
+  </g>
+  <g opacity="0.35">
+    <line x1="100" y1="228" x2="100" y2="218" stroke="#4a6741" stroke-width="1.5"/>
+    <circle cx="100" cy="215" r="5" fill="#2d5a3a" opacity="0.6"/>
+  </g>
+  <g opacity="0.4">
+    <line x1="125" y1="225" x2="125" y2="217" stroke="#4a6741" stroke-width="1.2"/>
+    <circle cx="125" cy="214" r="4" fill="#2d5a3a" opacity="0.55"/>
+  </g>
+
+  <!-- small solar panel on hill -->
+  <g transform="translate(380, 212) rotate(-15)">
+    <rect x="0" y="0" width="12" height="7" fill="#334155" rx="1" opacity="0.5"/>
+    <line x1="2" y1="0" x2="2" y2="7" stroke="#475569" stroke-width="0.4" opacity="0.4"/>
+    <line x1="6" y1="0" x2="6" y2="7" stroke="#475569" stroke-width="0.4" opacity="0.4"/>
+    <line x1="10" y1="0" x2="10" y2="7" stroke="#475569" stroke-width="0.4" opacity="0.4"/>
+    <line x1="0" y1="3.5" x2="12" y2="3.5" stroke="#475569" stroke-width="0.4" opacity="0.4"/>
+  </g>
+  <line x1="386" y1="219" x2="386" y2="228" stroke="#64748b" stroke-width="1" opacity="0.3"/>
+
+  <!-- water/river -->
+  <path d="M0 255 Q200 248 400 255 Q600 262 800 255 L800 280 Q600 273 400 280 Q200 287 0 280Z" fill="url(#water)" opacity="0.4"/>
+  <!-- water shimmer lines -->
+  <line x1="150" y1="265" x2="180" y2="265" stroke="#94a3b8" stroke-width="0.5" opacity="0.15">
+    <animate attributeName="x1" values="150;160;150" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="x2" values="180;190;180" dur="4s" repeatCount="indefinite"/>
+  </line>
+  <line x1="400" y1="260" x2="440" y2="260" stroke="#94a3b8" stroke-width="0.5" opacity="0.12">
+    <animate attributeName="x1" values="400;412;400" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="x2" values="440;452;440" dur="5s" repeatCount="indefinite"/>
+  </line>
+  <line x1="600" y1="268" x2="625" y2="268" stroke="#94a3b8" stroke-width="0.5" opacity="0.1">
+    <animate attributeName="x1" values="600;608;600" dur="3.5s" repeatCount="indefinite"/>
+    <animate attributeName="x2" values="625;633;625" dur="3.5s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- foreground ground -->
+  <path d="M0 280 Q200 275 400 280 Q600 285 800 278 L800 320 L0 320Z" fill="#15302a"/>
+
+  <!-- small data pulse traveling along ground (like fiber optic / quiet network) -->
+  <circle r="2" fill="#6C63FF" opacity="0.4" filter="url(#glow)">
+    <animateMotion dur="8s" repeatCount="indefinite" path="M50,290 Q200,285 400,290 Q600,295 750,288"/>
+    <animate attributeName="opacity" values="0;0.5;0.5;0" dur="8s" repeatCount="indefinite"/>
+  </circle>
+  <circle r="1.5" fill="#a78bfa" opacity="0.3" filter="url(#glow)">
+    <animateMotion dur="10s" repeatCount="indefinite" path="M750,292 Q600,288 400,292 Q200,296 50,290"/>
+    <animate attributeName="opacity" values="0;0.4;0.4;0" dur="10s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- main text - fades in -->
+  <text x="400" y="130" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="400" font-size="26" fill="url(#textFade)" letter-spacing="1" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.3;0.6;1" dur="4s" fill="freeze"/>
+    Quietly Building What Truly Matters
+  </text>
+
+  <!-- subtle underline -->
+  <line x1="280" y1="142" x2="520" y2="142" stroke="#94a3b8" stroke-width="0.5" opacity="0">
+    <animate attributeName="opacity" values="0;0;0.2;0.2" keyTimes="0;0.5;0.8;1" dur="4s" fill="freeze"/>
+  </line>
+
+  <!-- subtitle -->
+  <text x="400" y="162" text-anchor="middle" font-family="Fira Code, monospace" font-size="12" fill="#64748b" opacity="0">
+    <animate attributeName="opacity" values="0;0;0.6;0.6" keyTimes="0;0.6;0.9;1" dur="4s" fill="freeze"/>
+    @shreyabaid007
+  </text>
 </svg>
