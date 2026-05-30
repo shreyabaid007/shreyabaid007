@@ -14,7 +14,7 @@
   <!-- main text -->
   <text x="400" y="105" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#8a6080" letter-spacing="3.5" opacity=".35">
     <animate attributeName="opacity" values=".35;1;1;.35" keyTimes="0;.3;.7;1" dur="4s" repeatCount="indefinite"/>
-    building beyond the noise
+   
   </text>
 
   <!-- distant hills -->
